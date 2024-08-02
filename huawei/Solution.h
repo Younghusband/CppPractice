@@ -12,16 +12,15 @@
 using namespace std;
 
 class Solution {
+
 public:
+    // 大端序小端序 16位打印
     string GetHexString(long long input);
-    void sort(vector<int> &arr);
+
+    // 斐波那契
+    int fib(int n);
+
+
+
 };
-
-
-
-
-
-
-
-
 #endif //SOLUTION_H

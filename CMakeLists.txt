@@ -4,8 +4,16 @@ project(CppPractice)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(CppPractice main.cpp
-        GetHexString.cpp
+        huawei/GetHexString.cpp
         huawei/Solution.h
-        sort_test.cpp
+        utils/sort_utils.cpp
         huawei/FanSort.h
+        utils/sort_utils.h
+        CodeTemplate.cpp
+        huawei/Fib.cpp
+        basic/vector_playground.cpp
+        basic/map_playground.cpp
+        basic/queue_playground.cpp
+        basic/bar.cpp
+        basic/bar.h
 )
