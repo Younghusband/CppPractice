@@ -6,7 +6,6 @@
 #define SOLUTION_H
 
 #include <string>
-#include <cstdint>
 #include <vector>
 
 using namespace std;

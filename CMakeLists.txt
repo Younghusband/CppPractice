@@ -16,4 +16,5 @@ add_executable(CppPractice main.cpp
         basic/queue_playground.cpp
         basic/bar.cpp
         basic/bar.h
+        basic/basic_test.cpp
 )
