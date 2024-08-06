@@ -13,10 +13,7 @@ namespace sort_utils {
 
     void bubble_sort(vector<int> &arr);
 
-    void printArray(const vector<int> &arr);
-
 }
-
 
 
 #endif //SORT_UTILS_H

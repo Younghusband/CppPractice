@@ -11,10 +11,14 @@ add_executable(CppPractice main.cpp
         utils/sort_utils.h
         CodeTemplate.cpp
         huawei/Fib.cpp
-        basic/vector_playground.cpp
-        basic/map_playground.cpp
-        basic/queue_playground.cpp
-        basic/bar.cpp
-        basic/bar.h
-        basic/basic_test.cpp
+        basic/string_test.cpp
+        basic/array_test.cpp
+        basic/vector_test.cpp
+        leetcode/permutation.cpp
+        leetcode/bubble_sort.cpp
+        utils/print_utils.cpp
+        utils/print_utils.h
+        basic/map_test.cpp
+        leetcode/two_sum.cpp
+        basic/stack_test.cpp
 )
