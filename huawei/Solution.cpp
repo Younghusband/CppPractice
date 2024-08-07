@@ -66,6 +66,8 @@ public:
 };
 
 
+// [90, 98, 90, 90, 1, 1] 预期4 但实际上 0 有问题
+
 int main() {
     Solution solution;
     int result = solution.GetMinPriceDiff({1, 3, 7, 5, 12});
