@@ -21,4 +21,7 @@ add_executable(CppPractice main.cpp
         basic/map_test.cpp
         leetcode/two_sum.cpp
         basic/stack_test.cpp
+        leetcode/group_anagrams.cpp
+        basic/math_test.cpp
+        huawei/Solution.cpp
 )
