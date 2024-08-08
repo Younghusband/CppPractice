@@ -19,7 +19,5 @@ public:
     // 斐波那契
     int fib(int n);
 
-
-
 };
 #endif //SOLUTION_H
