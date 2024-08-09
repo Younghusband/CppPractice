@@ -27,4 +27,5 @@ add_executable(CppPractice main.cpp
         huawei/get_min_price_diff.cpp
         huawei/a+b.cpp
         huawei/ScalingSys.cpp
+        huawei/MergeCmds.cpp
 )
