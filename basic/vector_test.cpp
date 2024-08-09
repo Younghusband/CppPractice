@@ -45,4 +45,9 @@ void print(vector<int>& arr) {
 //
 //     sort(rVec.begin(), rVec.end());
 //     print(rVec);
+//
+//     rVec.emplace_back(100);
+//     print(rVec);
+//     rVec.emplace(rVec.begin(), -1);
+//     print(rVec);
 // }

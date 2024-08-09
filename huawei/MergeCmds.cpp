@@ -25,92 +25,89 @@
 // vlan-id 从1到4095都允许通过
 //
 
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2019. All rights reserved.
- * Description: 上机编程认证
- * Caution：本地调试时，只编译运行main.cpp文件，不要链接这个文件！因为本文件已经被main.cpp文件include了
- */
-
 #include <vector>
 #include <string>
 #include<map>
 using namespace std;
+
 class Solution {
 public:
     //最后执行一次，将01串转化为所需要的格式
-    string Encode(const string& str){
+    string Encode(const string &str) {
         string res;
-        map<int,bool> nums;
-        int n=str.size();
-        for(int i=0;i<n;i++){
-            if(str[i]=='1'){
-                int j=1;
-                while(str[i+j]=='1'){
+        map<int, bool> nums;
+        int n = str.size();
+        for (int i = 0; i < n; i++) {
+            if (str[i] == '1') {
+                int j = 1;
+                while (str[i + j] == '1') {
                     j++;
                 }
-                if(j!=1){
-                    res+=" "+to_string(i)+" to "+to_string(i+j-1);
-                    i+=j-1;
-                }else{
-                    res+=" "+to_string(i);
+                if (j != 1) {
+                    res += " " + to_string(i) + " to " + to_string(i + j - 1);
+                    i += j - 1;
+                } else {
+                    res += " " + to_string(i);
                 }
             }
         }
         return res;
     }
+
     //将str串用split分割为若干小节，将结果存在res数组中
-    void Splitby(string str,vector<string>& res, string split){
-        while(true){
-            int i=str.find(split);
-            if(i==-1){
+    void Splitby(string str, vector<string> &res, string split) {
+        while (true) {
+            int i = str.find(split);
+            if (i == -1) {
                 break;
             }
-            res.emplace_back(str.substr(0,i));
-            str.erase(str.begin(),str.begin()+i+1);
+            res.emplace_back(str.substr(0, i));
+            str.erase(str.begin(), str.begin() + i + 1);
         }
         res.emplace_back(str);
     }
-    void Decode(string str,string& qujian, char changeto){
+
+    void Decode(string str, string &qujian, char changeto) {
         //以空格分割串
-        map<int,bool> nums;
+        map<int, bool> nums;
         vector<string> tmp;
-        Splitby(str,tmp," ");
+        Splitby(str, tmp, " ");
         //记录数字和区间端点信息
-        int n=tmp.size();
-        for(int i=0;i<n;i++){
-            if(tmp[i]=="to"){
-                nums[stoi(tmp[i-1])]=true;
-                nums[stoi(tmp[i+1])]=true;
+        int n = tmp.size();
+        for (int i = 0; i < n; i++) {
+            if (tmp[i] == "to") {
+                nums[stoi(tmp[i - 1])] = true;
+                nums[stoi(tmp[i + 1])] = true;
                 i++;
                 continue;
             }
-            nums[stoi(tmp[i])]=false;
+            nums[stoi(tmp[i])] = false;
         }
         //维护区间内容
-        for(auto it=nums.begin();it!=nums.end();it++){
-            if(it->second){
-                int left=it->first;
+        for (auto it = nums.begin(); it != nums.end(); it++) {
+            if (it->second) {
+                int left = it->first;
                 it++;
-                int right=it->first;
-                for(;left<=right;left++){
-                    qujian[left]=changeto;
+                int right = it->first;
+                for (; left <= right; left++) {
+                    qujian[left] = changeto;
                 }
-            }else{
-                qujian[it->first]=changeto;
+            } else {
+                qujian[it->first] = changeto;
             }
         }
     }
-    string MergeCmds(const vector<string>& cmds)
-    {
-        string qujian(4096,'0');//待维护的01串
+
+    string MergeCmds(const vector<string> &cmds) {
+        string qujian(4096, '0'); //待维护的01串
         int n = cmds.size();
-        for(int i=0; i<n; i++){
-            if(cmds[i][0]=='p'){
-                Decode(cmds[i].substr(27,999),qujian,'1');
-            }else if(cmds[i][0]=='u'){
-                Decode(cmds[i].substr(32,999),qujian,'0');
+        for (int i = 0; i < n; i++) {
+            if (cmds[i][0] == 'p') {
+                Decode(cmds[i].substr(27, 999), qujian, '1');
+            } else if (cmds[i][0] == 'u') {
+                Decode(cmds[i].substr(32, 999), qujian, '0');
             }
         }
-        return "port trunk allow-pass vlan"+Encode(qujian);
+        return "port trunk allow-pass vlan" + Encode(qujian);
     }
 };
