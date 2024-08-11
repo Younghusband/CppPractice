@@ -20,6 +20,17 @@ void print(vector<int>& arr) {
     cout << res << endl;
 }
 
+
+bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
+    // 按照第一个值排序，第一个值相同则按照第二个值排序
+    if (a.first != b.first) {
+        return a.first < b.first;
+    }
+    return a.second < b.second;
+}
+
+
+
 // int main() {
 //     vector<int> vec = {1,2,3,4,5};
 //     size_t size = vec.size();
@@ -50,4 +61,23 @@ void print(vector<int>& arr) {
 //     print(rVec);
 //     rVec.emplace(rVec.begin(), -1);
 //     print(rVec);
+//
+//
+//     vector<std::pair<int, int>> needCompareVec = {
+//         {3, 2},
+//         {1, 4},
+//         {2, 2},
+//         {3, 1},
+//         {1, 2}
+//     };
+//
+//     // 使用自定义比较函数排序
+//     sort(needCompareVec.begin(), needCompareVec.end(), comparePairs);
+//
+//     for (const auto& p : needCompareVec) {
+//         cout << "(" << p.first << ", " << p.second << ")" << endl;
+//     }
+//
 // }
+
+

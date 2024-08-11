@@ -28,4 +28,6 @@ add_executable(CppPractice main.cpp
         huawei/a+b.cpp
         huawei/ScalingSys.cpp
         huawei/MergeCmds.cpp
+        huawei/print_all.cpp
+        huawei/timer.cpp
 )
