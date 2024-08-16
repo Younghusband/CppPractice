@@ -29,5 +29,14 @@ add_executable(CppPractice main.cpp
         huawei/ScalingSys.cpp
         huawei/MergeCmds.cpp
         huawei/print_all.cpp
-        huawei/timer.cpp
+        huawei/TimerSystem.cpp
+        huawei/done/backspace.cpp
+        huawei/stack_calculator.cpp
+        huawei/done/filename_gen.cpp
+        huawei/three_points.cpp
+        basic/another.cpp
+        basic/list_test.cpp
+        leetcode/find_kth.cpp
+        basic/queue_test.cpp
+        basic/sort_test.cpp
 )

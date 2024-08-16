@@ -4,6 +4,8 @@
  * Caution：本地调试时，只编译运行main.cpp文件，不要链接这个文件！因为本文件已经被main.cpp文件include了
  */
 
+// done finished
+
 #include <vector>
 #include <utility>
 #include <unordered_map>
@@ -13,8 +15,7 @@ using namespace std;
 
 class TimerSystem {
 
-
-        int curTime = 0;  // newestTime - curTime
+        int curTime = 0;
         // 查询过期时间
         unordered_map<int, int> expMap;
         // 进度
@@ -53,6 +54,7 @@ public:
         // 定时器存在
         if(it != stateMap.end()) {
             it->second = false;
+            return true;
         }
         return false;
     }
@@ -65,16 +67,16 @@ public:
             int timerId = pair.first;
             bool state = pair.second;
             if(state) {
-                int curTime = processMap[timerId]; // 当前计数器进度
-                int exp = expMap[timerId];
-                if(nowTime > curTime) {
-                    generate(timerId, curTime, exp, nowTime, res);
-                    processMap[timerId] = nowTime;
-                }
+                int timerTime = processMap[timerId]; // 当前计数器进度
+                int exp = expMap[timerId] + curTime - timerTime; // 修正时差
+                generate(timerId, curTime, exp, nowTime, res);
+                timerTime += (nowTime - curTime); // 时间差
+                processMap[timerId] = timerTime;
             }
         }
         // resort
         sort(res.begin(), res.end(), comparePairs);
+        curTime = nowTime;
         return res;
     }
 

@@ -30,7 +30,6 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 }
 
 
-
 // int main() {
 //     vector<int> vec = {1,2,3,4,5};
 //     size_t size = vec.size();
@@ -47,7 +46,21 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 //     for(auto it = vec.rbegin(); it != vec.rend(); it++) {
 //         cout << *it << " ";
 //     }
+//
 //     cout << endl;
+//     int valueToFind = 1;
+//     auto it = find(vec.begin(), vec.end(), valueToFind);
+//     if (it != vec.end()) {
+//         cout << "Element found in vector." << endl;
+//     } else {
+//         cout << "Element not found in vector." << endl;
+//     }
+//
+//     auto maxIt = max_element(vec.begin(), vec.end());
+//     auto minIt = min_element(vec.begin(), vec.end());
+//     cout << "max element is [" << *maxIt << "]" << endl;
+//     cout << "min element is [" << *minIt << "]" << endl;
+//
 //     vector<int> rVec; // 倒序数组
 //     rVec.assign(vec.rbegin(), vec.rend());
 //     print(rVec);
@@ -63,7 +76,7 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 //     print(rVec);
 //
 //
-//     vector<std::pair<int, int>> needCompareVec = {
+//     vector<pair<int, int>> needCompareVec = {
 //         {3, 2},
 //         {1, 4},
 //         {2, 2},
