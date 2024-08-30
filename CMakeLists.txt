@@ -39,4 +39,6 @@ add_executable(CppPractice main.cpp
         leetcode/find_kth.cpp
         basic/queue_test.cpp
         basic/sort_test.cpp
+        leetcode/lru.cpp
+        basic/tuple_test.cpp
 )

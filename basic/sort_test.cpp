@@ -21,12 +21,12 @@ void print(const vector<pair<int, int>> vec) {
 }
 
 
-int main() {
-    vector<pair<int, int>> vp = {
-        {0, 5}, {5, 8}, {10, 6}, {2, 11}, {2, 3}, {5, 1}
-    };
-    // sort(vp.begin(), vp.end());
-    sort(vp.begin(), vp.end(), comparePair);
-    // sort(vp.begin(), vp.end());
-    print(vp);
-}
+// int main() {
+//     vector<pair<int, int>> vp = {
+//         {0, 5}, {5, 8}, {10, 6}, {2, 11}, {2, 3}, {5, 1}
+//     };
+//     // sort(vp.begin(), vp.end());
+//     sort(vp.begin(), vp.end(), comparePair);
+//     // sort(vp.begin(), vp.end());
+//     print(vp);
+// }
