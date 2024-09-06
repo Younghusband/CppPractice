@@ -41,4 +41,11 @@ add_executable(CppPractice main.cpp
         basic/sort_test.cpp
         leetcode/lru.cpp
         basic/tuple_test.cpp
+        basic/construct_test.cpp
+        leetcode/intersection_node.cpp
+        leetcode/reverse_node.cpp
+        basic/heap.cpp
+        leetcode/topk_frequent.cpp
+        huawei/Gift_Combo.cpp
+        huawei/Mini_Order_System.cpp
 )

@@ -15,6 +15,11 @@ using namespace std;
 //         {3, "three"}
 //     };
 //
+//     int cantFind = 4;
+//     if(map.count(cantFind) == 0) {
+//         cout << "map 中 key = " << cantFind << " 的值为 "<< map[4] << endl; // 会打印空白
+//     }
+//
 //     cout << map[1] << endl;
 //     map[4] = "Yangfan";
 //     map.insert({5, "ByInsert"});

@@ -7,15 +7,15 @@
 
 using namespace std;
 
-int main() {
-
-    tuple<int, string, double> tuple1(1, "yfTuple", 0.007);
-
-    int myInt =
-
-
-
-
-
-
-}
+// int main() {
+//
+//     tuple<int, string, double> tuple1(1, "yfTuple", 0.007);
+//
+//     // int myInt =
+//
+//
+//
+//
+//
+//
+// }
