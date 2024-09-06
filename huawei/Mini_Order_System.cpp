@@ -17,6 +17,10 @@
 
 using namespace std;
 
+
+/**
+ * Mini订货系统
+ */
 class OrderSystem {
 public:
 
@@ -76,7 +80,6 @@ public:
                 maxId = min(cid, maxId);
             }
         }
-
         return maxId;
     }
 
