@@ -47,5 +47,9 @@ add_executable(CppPractice main.cpp
         basic/heap.cpp
         leetcode/topk_frequent.cpp
         huawei/Gift_Combo.cpp
-        huawei/Mini_Order_System.cpp
+        huawei/done/Mini_Order_System.cpp
+        huawei/ARP_miss_cache.cpp
+        huawei/call_whitelist.cpp
+        basic/set_test.cpp
+        basic/regex_test.cpp
 )

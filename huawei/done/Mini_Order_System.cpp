@@ -85,13 +85,13 @@ public:
 
 };
 
-int main() {
-    OrderSystem s;
-    s.Order(99, {"gd1000"});
-    s.Order(88, {"gd666", "gd555"});
-    s.Order(99, {"gd666"});
-    cout << s.Query() << endl;
-    s.Deliver({"gd666"});
-    cout << s.Query() << endl;
-
-}
+// int main() {
+//     OrderSystem s;
+//     s.Order(99, {"gd1000"});
+//     s.Order(88, {"gd666", "gd555"});
+//     s.Order(99, {"gd666"});
+//     cout << s.Query() << endl;
+//     s.Deliver({"gd666"});
+//     cout << s.Query() << endl;
+//
+// }
