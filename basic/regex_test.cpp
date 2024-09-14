@@ -6,11 +6,11 @@
 #include <string>
 using namespace std;
 
-int main() {
-
-    string p1 = "1111*";
-    string text = "11112222";
-
-
-
-}
+// int main() {
+//
+//     string p1 = "1111*";
+//     string text = "11112222";
+//
+//
+//
+// }

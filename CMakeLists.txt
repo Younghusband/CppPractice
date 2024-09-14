@@ -49,7 +49,7 @@ add_executable(CppPractice main.cpp
         huawei/Gift_Combo.cpp
         huawei/done/Mini_Order_System.cpp
         huawei/ARP_miss_cache.cpp
-        huawei/call_whitelist.cpp
+        huawei/done/call_whitelist.cpp
         basic/set_test.cpp
         basic/regex_test.cpp
 )
