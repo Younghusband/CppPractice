@@ -52,4 +52,5 @@ add_executable(CppPractice main.cpp
         huawei/done/call_whitelist.cpp
         basic/set_test.cpp
         basic/regex_test.cpp
+        huawei/done/binary_max_len.cpp
 )
