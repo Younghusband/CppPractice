@@ -53,4 +53,5 @@ add_executable(CppPractice main.cpp
         basic/set_test.cpp
         basic/regex_test.cpp
         huawei/done/binary_max_len.cpp
+        huawei/text_editor.cpp
 )

@@ -8,11 +8,25 @@
 
 using namespace std;
 
-void print(vector<int>& arr) {
+template <typename T>
+void print(vector<T>& arr) {
     string res = "[";
     for(int i = 0; i < arr.size(); i++) {
         res += to_string(arr.at(i));
         if(i != arr.size() - 1) {
+            res += ", ";
+        }
+    }
+    res += "]";
+    cout << res << endl;
+}
+
+template <>
+void print<string>(vector<string>& arr) {
+    string res = "[";
+    for (int i = 0; i < arr.size(); i++) {
+        res += arr.at(i);  // 直接使用 string 类型
+        if (i != arr.size() - 1) {
             res += ", ";
         }
     }
@@ -33,65 +47,67 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 
 
 // int main() {
-//     // vector<int> vec = {1,2,3,4,5};
-//     // size_t size = vec.size();
-//     // // cout << size << endl;
-//     // vec.push_back(6);
-//     // // cout << vec.size() << endl;
+//
+//     vector<int> vec = {1,2,3,4,5};
+//     size_t size = vec.size();
+//     // cout << size << endl;
+//     vec.push_back(6);
+//     // cout << vec.size() << endl;
+//     print(vec);
+//     vec.insert(vec.begin() + 1, 99);
+//     print(vec);
+//     for(auto it = vec.begin(); it != vec.end(); it++) {
+//         cout << *it << " ";
+//     }
+//     cout << endl;
+//     for(auto it = vec.rbegin(); it != vec.rend(); it++) {
+//         cout << *it << " ";
+//     }
+//
+//     cout << endl;
+//     int valueToFind = 1;
+//     auto it = find(vec.begin(), vec.end(), valueToFind);
+//     if (it != vec.end()) {
+//         cout << "Element found in vector." << endl;
+//     } else {
+//         cout << "Element not found in vector." << endl;
+//     }
+//
+//     auto maxIt = max_element(vec.begin(), vec.end());
+//     auto minIt = min_element(vec.begin(), vec.end());
+//     cout << "max element is [" << *maxIt << "]" << endl;
+//     cout << "min element is [" << *minIt << "]" << endl;
+//
+//     vector<int> rVec; // 倒序数组
+//     rVec.assign(vec.rbegin(), vec.rend());
+//     print(rVec);
+//     // sort(vec.begin, vec.end());
 //     // print(vec);
-//     // vec.insert(vec.begin() + 1, 99);
-//     // print(vec);
-//     // for(auto it = vec.begin(); it != vec.end(); it++) {
-//     //     cout << *it << " ";
-//     // }
-//     // cout << endl;
-//     // for(auto it = vec.rbegin(); it != vec.rend(); it++) {
-//     //     cout << *it << " ";
-//     // }
-//     //
-//     // cout << endl;
-//     // int valueToFind = 1;
-//     // auto it = find(vec.begin(), vec.end(), valueToFind);
-//     // if (it != vec.end()) {
-//     //     cout << "Element found in vector." << endl;
-//     // } else {
-//     //     cout << "Element not found in vector." << endl;
-//     // }
-//     //
-//     // auto maxIt = max_element(vec.begin(), vec.end());
-//     // auto minIt = min_element(vec.begin(), vec.end());
-//     // cout << "max element is [" << *maxIt << "]" << endl;
-//     // cout << "min element is [" << *minIt << "]" << endl;
-//     //
-//     // vector<int> rVec; // 倒序数组
-//     // rVec.assign(vec.rbegin(), vec.rend());
-//     // print(rVec);
-//     // // sort(vec.begin, vec.end());
-//     // // print(vec);
-//     //
-//     // sort(rVec.begin(), rVec.end());
-//     // print(rVec);
-//     //
-//     // rVec.emplace_back(100);
-//     // print(rVec);
-//     // rVec.emplace(rVec.begin(), -1);
-//     // print(rVec);
-//     //
-//     //
-//     // vector<pair<int, int>> needCompareVec = {
-//     //     {3, 2},
-//     //     {1, 4},
-//     //     {2, 2},
-//     //     {3, 1},
-//     //     {1, 2}
-//     // };
-//     //
-//     // // 使用自定义比较函数排序
-//     // sort(needCompareVec.begin(), needCompareVec.end(), comparePairs);
-//     //
-//     // for (const auto& p : needCompareVec) {
-//     //     cout << "(" << p.first << ", " << p.second << ")" << endl;
-//     // }
+//
+//     sort(rVec.begin(), rVec.end());
+//     print(rVec);
+//
+//     rVec.emplace_back(100);
+//     print(rVec);
+//     rVec.emplace(rVec.begin(), -1);
+//     print(rVec);
+//
+//
+//     vector<pair<int, int>> needCompareVec = {
+//         {3, 2},
+//         {1, 4},
+//         {2, 2},
+//         {3, 1},
+//         {1, 2}
+//     };
+//
+//
+//     // 使用自定义比较函数排序
+//     sort(needCompareVec.begin(), needCompareVec.end(), comparePairs);
+//
+//     for (const auto& p : needCompareVec) {
+//         cout << "(" << p.first << ", " << p.second << ")" << endl;
+//     }
 //
 //     // test find and remove
 //     vector<int> vec1 = {1, 1, 1, 10, 20, 30, 40, 50, 30};
@@ -120,9 +136,21 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 //     cout << "after execute \"erase\"" << endl;
 //     print(vec1);
 //
-//     vector<int> vec2 = {"a", "b"};
+//     vector<string> vec2 = {"a", "b"};
 //     find(vec2.begin(), vec2.end(), "a");
 //
+//
+//     vector<string> strv = {"yyyy", "ffffffffff", "mmm"};
+//
+//     strv[0] += strv[1];
+//     strv.erase(strv.begin() + 1);
+//     print(strv);
+//
+//     cout << strv.back() << endl;
+//
+//     strv.back()+="yf";
+//
+//     cout << strv.back() << endl;
 //
 // }
 
