@@ -44,19 +44,16 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 }
 
 
-
-
 // int main() {
+//      vector<int> vec = {1,2,3,4,5};
+//      size_t size = vec.size();
+//      // cout << size << endl;
+//      vec.push_back(6);
+//      // cout << vec.size() << endl;
+//      print(vec);
+//      vec.insert(vec.begin() + 1, 99);
 //
-     // vector<int> vec = {1,2,3,4,5};
-     // size_t size = vec.size();
-     // // cout << size << endl;
-     // vec.push_back(6);
-     // // cout << vec.size() << endl;
-     // print(vec);
-     // vec.insert(vec.begin() + 1, 99);
-     //
-     // print(vec);
+//      print(vec);
 //     for(auto it = vec.begin(); it != vec.end(); it++) {
 //         cout << *it << " ";
 //     }
@@ -64,7 +61,6 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 //     for(auto it = vec.rbegin(); it != vec.rend(); it++) {
 //         cout << *it << " ";
 //     }
-//
 //     cout << endl;
 //     int valueToFind = 1;
 //     auto it = find(vec.begin(), vec.end(), valueToFind);
@@ -102,10 +98,8 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 //         {1, 2}
 //     };
 //
-//
 //     // 使用自定义比较函数排序
 //     sort(needCompareVec.begin(), needCompareVec.end(), comparePairs);
-//
 //     for (const auto& p : needCompareVec) {
 //         cout << "(" << p.first << ", " << p.second << ")" << endl;
 //     }
@@ -137,8 +131,10 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 //     cout << "after execute \"erase\"" << endl;
 //     print(vec1);
 //
-//     vector<string> vec2 = {"a", "b"};
-//     find(vec2.begin(), vec2.end(), "a");
+//     vector<string> vec2 = {"a", "b", "abc"};
+//     auto findIt = find(vec2.begin(), vec2.end(), "a");
+//
+//     cout << *findIt << endl;
 //
 //
 //     vector<string> strv = {"yyyy", "ffffffffff", "mmm"};
@@ -148,9 +144,7 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 //     print(strv);
 //
 //     cout << strv.back() << endl;
-//
 //     strv.back()+="yf";
-//
 //     cout << strv.back() << endl;
 //
 // }

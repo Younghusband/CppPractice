@@ -54,4 +54,9 @@ add_executable(CppPractice main.cpp
         basic/regex_test.cpp
         huawei/done/binary_max_len.cpp
         huawei/done/text_editor.cpp
+        basic/playground.cpp
+        huawei/done/calc_area.cpp
+        huawei/done/longest_aeiou.cpp
+        huawei/done/get_diff_cnt.cpp
+        leetcode/longest_substring.cpp
 )

@@ -9,6 +9,11 @@
 using namespace std;
 
 // int main() {
+//
+//     set<string> strSet;
+//     strSet.insert("xxx");
+//     cout << strSet.contains("xxx") << endl;
+//
 //     set<int> intSet;
 //     auto res1 = intSet.insert(10);
 //     cout << res1.second << endl;
@@ -33,7 +38,5 @@ using namespace std;
 //
 //     intSet.erase(20);
 //     cout << intSet.size() << endl;
-//     set<string> strSet;
-//     strSet.insert("xxx");
-//     cout << strSet.contains("xxx") << endl;
+//
 // }
