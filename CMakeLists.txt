@@ -59,4 +59,8 @@ add_executable(CppPractice main.cpp
         huawei/done/longest_aeiou.cpp
         huawei/done/get_diff_cnt.cpp
         leetcode/longest_substring.cpp
+        huawei/done/server_min_lag.cpp
+        huawei/find_same_weight.cpp
+        basic/permutation_test.cpp
+        basic/number_test.cpp
 )

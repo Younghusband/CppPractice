@@ -11,7 +11,16 @@
 
 using namespace std;
 
+
+template <typename T1, typename T2>
+auto add(T1 a, T2 b) -> decltype(a + b) {
+    return a + b;
+}
+
+
 // int main() {
+//
+//     cout << to_string(add(3 , 0.5)) << endl;
 //
 //     pair<int, int> xxx;
 //     xxx = make_pair(1, 2);

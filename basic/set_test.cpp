@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <set>
+#include <unordered_set>
 
 using namespace std;
 
@@ -38,5 +39,26 @@ using namespace std;
 //
 //     intSet.erase(20);
 //     cout << intSet.size() << endl;
+//
+//     set<int> ordered_set;
+//     ordered_set.insert(5);
+//     ordered_set.insert(2);
+//     ordered_set.insert(8);
+//     cout << "std::set elements:";
+//     for (auto& elem : ordered_set) {
+//         cout << " " << elem;
+//     }
+//     cout << endl;
+//
+//     // 使用 std::unordered_set
+//     unordered_set<int> unordered_set;
+//     unordered_set.insert(5);
+//     unordered_set.insert(2);
+//     unordered_set.insert(8);
+//     std::cout << "std::unordered_set elements:";
+//     for (auto& elem : unordered_set) {
+//         std::cout << " " << elem;
+//     }
+//     std::cout << std::endl;
 //
 // }
