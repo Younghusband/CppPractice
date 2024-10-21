@@ -20,7 +20,7 @@ class TimerSystem {
         unordered_map<int, int> expMap;
         // 进度
         unordered_map<int, int> processMap;
-        // 状态
+        // 计时器状态
         unordered_map<int, bool> stateMap;
 
 public:

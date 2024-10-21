@@ -7,11 +7,12 @@
 #include <list>
 #include <unordered_map>
 
+using namespace std;
 class LRUCache {
 private:
     int capacity;  // 缓存容量
-    std::list<std::pair<int, int>> lruList; // 存储键值对
-    std::unordered_map<int, std::list<std::pair<int, int>>::iterator> cache; // 快速查找
+    list<pair<int, int>> lruList; // 存储键值对
+    unordered_map<int, list<pair<int, int>>::iterator> cache; // 快速查找
 public:
 
     LRUCache(int capacity) : capacity(capacity) {}

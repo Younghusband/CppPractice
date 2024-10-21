@@ -45,15 +45,15 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 
 
 // int main() {
-//      vector<int> vec = {1,2,3,4,5};
-//      size_t size = vec.size();
-//      // cout << size << endl;
-//      vec.push_back(6);
-//      // cout << vec.size() << endl;
-//      print(vec);
-//      vec.insert(vec.begin() + 1, 99);
+//     vector<int> vec = {1,2,3,4,5};
+//     size_t size = vec.size();
+//     // cout << size << endl;
+//     vec.push_back(6);
+//     // cout << vec.size() << endl;
+//     print(vec);
+//     vec.insert(vec.begin() + 1, 99);
 //
-//      print(vec);
+//     print(vec);
 //     for(auto it = vec.begin(); it != vec.end(); it++) {
 //         cout << *it << " ";
 //     }
@@ -138,7 +138,6 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 //
 //
 //     vector<string> strv = {"yyyy", "ffffffffff", "mmm"};
-//
 //     strv[0] += strv[1];
 //     strv.erase(strv.begin() + 1);
 //     print(strv);
@@ -146,7 +145,6 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 //     cout << strv.back() << endl;
 //     strv.back()+="yf";
 //     cout << strv.back() << endl;
-//
 // }
 
 
