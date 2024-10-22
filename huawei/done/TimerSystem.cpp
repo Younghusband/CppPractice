@@ -10,24 +10,26 @@
 #include <utility>
 #include <unordered_map>
 #include <algorithm>
+#include <iostream>
+#include <map>
 
 using namespace std;
 
 class TimerSystem {
 
         int curTime = 0;
-        // 查询过期时间
-        unordered_map<int, int> expMap;
+        // 每个计时器的
+        map<int, int> expires;
         // 进度
-        unordered_map<int, int> processMap;
+        map<int, int> processMap;
         // 计时器状态
-        unordered_map<int, bool> stateMap;
+        map<int, bool> stateMap;
 
 public:
     TimerSystem(const vector<int>& timers)
     {
         for(int i = 0; i < timers.size(); i++) {
-            expMap[i] = timers[i];
+            expires[i] = timers[i];
             processMap[i] = 0;
             stateMap[i] = false;
         }
@@ -39,9 +41,7 @@ public:
         // 找到定时器
         if(it != stateMap.end()) {
             // 定时器关闭
-            if(!it->second) {
-                it->second = true;
-            }
+            it->second = true;
             processMap[timerId] = 0; // 重置进度
             return true;
         }
@@ -66,12 +66,14 @@ public:
         for(const auto& pair: stateMap) {
             int timerId = pair.first;
             bool state = pair.second;
+
             if(state) {
-                int timerTime = processMap[timerId]; // 当前计数器进度
-                int exp = expMap[timerId] + curTime - timerTime; // 修正时差
-                generate(timerId, curTime, exp, nowTime, res);
-                timerTime += (nowTime - curTime); // 时间差
-                processMap[timerId] = timerTime;
+                int processedTime = processMap[timerId]; // 当前计数器进度
+                int gap = curTime - processedTime; // 修正和时钟的差距
+                int curStep = nowTime - curTime;
+                generate(timerId, processedTime, processedTime + curStep, expires[timerId], res, gap);
+                processedTime += curStep; // 本次行进时间
+                processMap[timerId] = processedTime;
             }
         }
         // resort
@@ -80,10 +82,10 @@ public:
         return res;
     }
 
-    void generate(int timerId, int cur, int round, int end, vector<pair<int, int>>& res) {
-        for(int i = cur; i <= end; i++) {
-            if(i != cur && i % round == 0) {
-                res.push_back(make_pair(i, timerId));
+    void generate(int timerId, int begin, int end, int round, vector<pair<int, int>>& res, int clockGap) {
+        for(int cur = begin + 1; cur <= end; cur++) {
+            if(cur % round == 0) {
+                res.push_back(make_pair(cur + clockGap, timerId));
             }
         }
     }
@@ -95,3 +97,11 @@ public:
     }
 
 };
+
+void print(vector<pair<int, int>>& data) {
+    cout << "[";
+    for(auto const& item: data) {
+        cout << "[" << item.first << ", " << item.second << "]" << " ";
+    }
+    cout << "]" << endl;
+}

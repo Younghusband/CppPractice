@@ -39,9 +39,22 @@ void print(const list<pair<int, string>>& data) {
 //     singleList.insert(next(singleList.begin()), 100);
 //     print(singleList);
 //
+//     list<int> newList({7, 8, 9});
+//     singleList.splice(singleList.end(), newList);
+//     print(singleList);
+//     print(newList);  // newlist为空
+//
+//     list<int> newList1({10, 11, 12});
+//     singleList.insert(singleList.begin(), newList1.begin(), newList1.end());
+//     print(singleList);
+//     print(newList1);
+//
+//     singleList.pop_back();
+//     singleList.pop_front();
+//     cout << singleList.back() << endl; // 注意 begin end是iterator  front back是实际引用
+//
 //     list<pair<int, string>> data = {{1, "yangfan"}, {2, "xuxiaorong"}, {3, "heyu"}};
 //     data.splice(data.begin(), data, next(next(data.begin())));  // 适用于已有数据的腾挪
 //     print(data);
-//
 //
 // }

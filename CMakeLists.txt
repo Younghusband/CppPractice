@@ -25,7 +25,7 @@ add_executable(CppPractice main.cpp
         huawei/ScalingSys.cpp
         huawei/MergeCmds.cpp
         huawei/print_all.cpp
-        huawei/TimerSystem.cpp
+        huawei/done/TimerSystem.cpp
         huawei/done/backspace.cpp
         huawei/stack_calculator.cpp
         huawei/done/filename_gen.cpp
@@ -44,7 +44,7 @@ add_executable(CppPractice main.cpp
         leetcode/topk_frequent.cpp
         huawei/Gift_Combo.cpp
         huawei/done/Mini_Order_System.cpp
-        huawei/ARP_miss_cache.cpp
+        huawei/done/ARP_miss_cache.cpp
         huawei/done/call_whitelist.cpp
         basic/set_test.cpp
         basic/regex_test.cpp
