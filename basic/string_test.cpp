@@ -1,88 +1,59 @@
+// //
+// // Created by Younghusband on 2024/8/4.
+// //
 //
-// Created by Younghusband on 2024/8/4.
+// #include <iostream>
+// #include <string>
+// #include <vector>
+// #include <algorithm>
+// #include <cstring>
 //
-
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <cstring>
-
-using namespace std;
-
-void print(char str, char split);
-
-void print(char str, char split) {
-    cout << str << split;
-}
-
-#define XXX = "caonima";
-
+// using namespace std;
+//
+// void print(char str, char split);
+//
+// void print(char str, char split) {
+//     cout << str << split;
+// }
+//
+// #define XXX = "caonima";
 // int main() {
 //
-//     // string str = "Hello World!";
-//     // cout << str.size() << endl;
-//     // cout << str.length() << endl;
-//     // for(string::iterator it = str.begin(); it != str.end(); it++) {
-//     //     print(*it, ' ');
-//     // }
-//     // cout << endl;
-//     // for(size_t i = 0; i < str.size(); i++) {
-//     //     print(str[i], ' ');
-//     // }
-//     // cout << endl;
-//     // for(char c : str) {
-//     //     print(c, ' ');
-//     // }
-//     // cout << endl;
-//     // for(string::reverse_iterator it = str.rbegin(); it != str.rend(); it++) {
-//     //     print(*it, ' ');
-//     // }
-//     // cout << endl;
-//     //
-//     // string str1 = "Hello World!";
-//     // string str2 = "fuck you!";
-//     // cout << to_string(str1 == str) << endl;
-//     // cout << to_string(str1 == str2) << endl;
-//     //
-//     // char charArray[] = "hello";
-//     // for(size_t i = 0; i < strlen(charArray); i++) { //
-//     //     cout << charArray[i] << ' ';
-//     // }
-//     // cout << endl;
-//     // std::cout << "Null terminator: " << static_cast<int>(charArray[5]) << endl;
-//     //
-//     // cout << "Test substr/stoi ..." << endl << endl;
-//     // string yf = "yang fan 110";
-//     // cout << yf.substr(1, 999) << endl;
-//     // char c = yf.substr(1, 1)[0];
-//     // cout << c << endl;
-//     // cout << static_cast<int>(c) << endl;
-//     // cout << stoi(yf.substr(9)) << endl;
+//     string str = "Hello World!";
+//     for(string::iterator it = str.begin(); it != str.end(); it++) {
+//         print(*it, ' ');
+//     }
+//     cout << endl;
+//     for(string::reverse_iterator it = str.rbegin(); it != str.rend(); it++) {
+//         print(*it, ' ');
+//     }
+//     cout << endl;
+//
+//     string yf = "yang fan 110";
+//     cout << yf.substr(1, 999) << endl;
+//     cout << stoi(yf.substr(9)) << endl;
 //
 //     string str11("HelloWorld");
-//     // str11.replace(1, 2, "yyds", 2, 3); // ä½¿ç”¨yydsçš„å­ä¸²ï¼ˆ2,3ï¼‰æ›¿æ¢str1çš„å­ä¸²ï¼ˆ1ï¼Œ 2ï¼‰
-//     str11.replace(1,3,3,'S'); // ä½¿ç”¨3ä¸ª'S'å­—ç¬¦æ›¿æ¢str1çš„å­ä¸²ï¼ˆ1ï¼Œ 3ï¼‰
+//     // str11.replace(1, 2, "yyds", 2, 3); // Ê¹ÓÃyydsµÄ×Ó´®£¨2,3£©Ìæ»»str1µÄ×Ó´®£¨1£¬ 2£©
+//     str11.replace(1,3,3,'S'); // Ê¹ÓÃ3¸ö'S'×Ö·ûÌæ»»str1µÄ×Ó´®£¨1£¬ 3£©
 //
 //     cout << str11 << endl;
-//
 //     string str111("HelloWorld");
 //     size_t findPos = str111.find("ll");
 //     if (findPos != string::npos) {
-//         cout << str111.substr(findPos) << endl; // æ‰“å°è¾“å‡ºlloWorld
+//         cout << str111.substr(findPos) << endl; // ´òÓ¡Êä³ölloWorld
 //     }
-//     findPos = str111.find('l', 5); // ä»Žä¸‹æ ‡5å¼€å§‹æŸ¥æ‰¾
+//     findPos = str111.find('l', 5); // ´ÓÏÂ±ê5¿ªÊ¼²éÕÒ
 //     if (findPos != string::npos) {
-//         cout << str111.substr(findPos) << endl; // æ‰“å°è¾“å‡ºld
+//         cout << str111.substr(findPos) << endl; // ´òÓ¡Êä³öld
 //     }
-//     findPos = str111.find_first_of("lol"); // æŸ¥æ‰¾ç¬¬ä¸€æ¬¡å‡ºçŽ°å­—ç¬¦'l'æˆ–'o'çš„ä½ç½®
+//     findPos = str111.find_first_of("lol"); // ²éÕÒµÚÒ»´Î³öÏÖ×Ö·û'l'»ò'o'µÄÎ»ÖÃ
 //     if (findPos != string::npos) {
-//         cout << str111.substr(findPos) << endl; // æ‰“å°è¾“å‡ºlloWorldï¼ˆç¬¬ä¸€ä¸ª'l'å­—ç¬¦ï¼‰
+//         cout << str111.substr(findPos) << endl; // ´òÓ¡Êä³ölloWorld£¨µÚÒ»¸ö'l'×Ö·û£©
 //     }
 //
 //     string hasStar = "111112*";
 //     string hasNoStar = "111112";
-//
 //     string newstr = hasStar.substr(0, hasStar.find_first_of("*"));
 //     cout << newstr << endl;
 //
@@ -91,27 +62,28 @@ void print(char str, char split) {
 //     }
 //
 //     string str3("fuckyou");
-//     str3 += "x";
-//     str3.append("C");
-//     char c1 = 'a';
-//     str3 += c1;
-//     cout << str3 << endl;
-//     str3 += toupper(c1);
-//     cout << str3 << endl;
+//     cout << toupper(str3[0]) << endl; // µ¥¸ö×Ö·û£¬Ð¡Ð´ tolower
+//
+//     string str4;
+//     for(size_t i = 0; i < str3.size(); i++) {
+//         str4 += toupper(str3[i]);
+//     }
+//     cout << "×ª»»Îª´óÐ´µÄ : " << str4 << endl;
+//
+//     // test transform
+//     transform(str3.begin(), str3.end(), str3.begin(), ::tolower);
+//     cout << "×ª»»ÎªÐ¡Ð´µÄ : " << str3 << endl;
 //
 //     string readyToErase = "123454321";
 //     cout << readyToErase.erase(4, 1) << endl;
-//     cout << readyToErase.erase(4) << endl;  // ä¿ç•™ ä¸‹æ ‡0åˆ°3
-//
-//
+//     cout << readyToErase.erase(4) << endl;  // ±£Áô ÏÂ±ê0µ½3
 //
 //     string readyToInsert = "12344321";
 //     readyToInsert.insert(4, 1, 'A');
 //     cout << readyToInsert << endl;
 //
-//
 // }
-
-
-
-
+//
+//
+//
+//

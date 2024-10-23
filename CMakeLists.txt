@@ -11,7 +11,7 @@ add_executable(CppPractice main.cpp
         basic/string_test.cpp
         basic/array_test.cpp
         basic/vector_test.cpp
-        leetcode/permutation.cpp
+        leetcode/full_permutation.cpp
         leetcode/bubble_sort.cpp
         utils/print_utils.cpp
         utils/print_utils.h
@@ -60,4 +60,5 @@ add_executable(CppPractice main.cpp
         basic/permutation_test.cpp
         basic/number_test.cpp
         huawei/dianliu_sample.cpp
+        huawei/words_matchII.cpp
 )
