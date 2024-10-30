@@ -10,7 +10,6 @@ using namespace std;
 
 
 // int main() {
-//
 //     std::string str("HelloWorld");
 //     auto itr = find(str.begin(), str.end(), 'o');
 //     if (itr != str.end()) {

@@ -1,66 +1,65 @@
+// //
+// // Created by Younghusband on 2024/8/6.
+// //
+// #include <iostream>
+// #include <vector>
+// #include <string>
+// #include <algorithm>
 //
-// Created by Younghusband on 2024/8/6.
+// using namespace std;
 //
-#include <iostream>
-#include <vector>
-#include <string>
-#include <algorithm>
-
-using namespace std;
-
-template <typename T>
-void print(vector<T>& arr) {
-    string res = "[";
-    for(int i = 0; i < arr.size(); i++) {
-        res += to_string(arr.at(i));
-        if(i != arr.size() - 1) {
-            res += ", ";
-        }
-    }
-    res += "]";
-    cout << res << endl;
-}
-
-template <>
-void print<string>(vector<string>& arr) {
-    string res = "[";
-    for (int i = 0; i < arr.size(); i++) {
-        res += arr.at(i);  // 直接使用 string 类型
-        if (i != arr.size() - 1) {
-            res += ", ";
-        }
-    }
-    res += "]";
-    cout << res << endl;
-}
-
-
-bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
-    // 按照第一个值排序，第一个值相同则按照第二个值排序
-    if (a.first != b.first) {
-        return a.first < b.first;
-    }
-    return a.second < b.second;
-}
-
-
+// template <typename T>
+// void print(vector<T>& arr) {
+//     string res = "[";
+//     for(int i = 0; i < arr.size(); i++) {
+//         res += to_string(arr.at(i));
+//         if(i != arr.size() - 1) {
+//             res += ", ";
+//         }
+//     }
+//     res += "]";
+//     cout << res << endl;
+// }
+//
+// template <>
+// void print<string>(vector<string>& arr) {
+//     string res = "[";
+//     for (int i = 0; i < arr.size(); i++) {
+//         res += arr.at(i);  // 直接使用 string 类型
+//         if (i != arr.size() - 1) {
+//             res += ", ";
+//         }
+//     }
+//     res += "]";
+//     cout << res << endl;
+// }
+//
+//
+// bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
+//     // 按照第一个值排序，第一个值相同则按照第二个值排序
+//     if (a.first != b.first) {
+//         return a.first < b.first;
+//     }
+//     return a.second < b.second;
+// }
+//
+//
 // int main() {
 //     vector<int> vec = {1,2,3,4,5};
-//     size_t size = vec.size();
-//     // cout << size << endl;
 //     vec.push_back(6);
-//     // cout << vec.size() << endl;
 //     print(vec);
-//     vec.insert(vec.begin() + 1, 99);
 //
+//     swap(*vec.begin(), *vec.end());  // 等同于 swap(vec[0], vec[size - 1])
+//     vec.insert(vec.begin() + 1, 99);
 //     print(vec);
-//     for(auto it = vec.begin(); it != vec.end(); it++) {
-//         cout << *it << " ";
-//     }
-//     cout << endl;
-//     for(auto it = vec.rbegin(); it != vec.rend(); it++) {
-//         cout << *it << " ";
-//     }
+//     // for(auto it = vec.begin(); it != vec.end(); it++) {
+//     //     cout << *it << " ";
+//     // }
+//     // cout << endl;
+//     // for(auto it = vec.rbegin(); it != vec.rend(); it++) {
+//     //     cout << *it << " ";
+//     // }
+//     reverse(vec.begin() + 1, vec.end() - 1);
 //     cout << endl;
 //     int valueToFind = 1;
 //     auto it = find(vec.begin(), vec.end(), valueToFind);
@@ -69,7 +68,6 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 //     } else {
 //         cout << "Element not found in vector." << endl;
 //     }
-//
 //     auto maxIt = max_element(vec.begin(), vec.end());
 //     auto minIt = min_element(vec.begin(), vec.end());
 //     cout << "max element is [" << *maxIt << "]" << endl;
@@ -78,10 +76,10 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 //     vector<int> rVec; // 倒序数组
 //     rVec.assign(vec.rbegin(), vec.rend());
 //     print(rVec);
-//     // sort(vec.begin, vec.end());
-//     // print(vec);
 //
-//     sort(rVec.begin(), rVec.end());
+//     // sort(rVec.begin(), rVec.end(), greater<int>());
+//     sort(rVec.begin(), rVec.end(), [](auto& a, auto& b) {return a > b;} );
+//     // sort(rVec.begin(), rVec.end(), [](auto& a, auto& b) -> bool {return a > b;} );
 //     print(rVec);
 //
 //     rVec.emplace_back(100);
@@ -146,5 +144,5 @@ bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
 //     strv.back()+="yf";
 //     cout << strv.back() << endl;
 // }
-
-
+//
+//

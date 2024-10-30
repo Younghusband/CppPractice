@@ -9,7 +9,6 @@ add_executable(CppPractice main.cpp
         utils/sort_utils.h
         CodeTemplate.cpp
         basic/string_test.cpp
-        basic/array_test.cpp
         basic/vector_test.cpp
         leetcode/full_permutation.cpp
         leetcode/bubble_sort.cpp
@@ -19,7 +18,6 @@ add_executable(CppPractice main.cpp
         leetcode/two_sum.cpp
         basic/stack_test.cpp
         leetcode/group_anagrams.cpp
-        basic/math_test.cpp
         huawei/get_min_price_diff.cpp
         huawei/a+b.cpp
         huawei/ScalingSys.cpp
@@ -33,7 +31,7 @@ add_executable(CppPractice main.cpp
         basic/another.cpp
         basic/list_test.cpp
         leetcode/find_kth.cpp
-        basic/queue_test.cpp
+        basic/priority_queue_test.cpp
         basic/sort_test.cpp
         leetcode/lru.cpp
         basic/tuple_test.cpp
@@ -50,7 +48,6 @@ add_executable(CppPractice main.cpp
         basic/regex_test.cpp
         huawei/done/binary_max_len.cpp
         huawei/done/text_editor.cpp
-        basic/playground.cpp
         huawei/done/calc_area.cpp
         huawei/done/longest_aeiou.cpp
         huawei/done/get_diff_cnt.cpp
@@ -61,4 +58,18 @@ add_executable(CppPractice main.cpp
         basic/number_test.cpp
         huawei/dianliu_sample.cpp
         huawei/words_matchII.cpp
+        basic/deque_test.cpp
+        leetcode/subsets.cpp
+        basic/queue_test.cpp
+        basic/main1.cpp
+        basic/main2.cpp
+        basic/hex_binary_test.cpp
+        basic/main3.cpp
+        huawei/done/baowen.cpp
+        huawei/Assets_sys.cpp
+        basic/coro_test.cpp
+        huawei/done/min_price.cpp
+        huawei/done/filename_generator.cpp
+        huawei/done/max_mask_output.cpp
+        huawei/three_p.cpp
 )

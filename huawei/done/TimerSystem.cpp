@@ -66,7 +66,6 @@ public:
         for(const auto& pair: stateMap) {
             int timerId = pair.first;
             bool state = pair.second;
-
             if(state) {
                 int processedTime = processMap[timerId]; // 当前计数器进度
                 int gap = curTime - processedTime; // 修正和时钟的差距
@@ -98,10 +97,10 @@ public:
 
 };
 
-void print(vector<pair<int, int>>& data) {
-    cout << "[";
-    for(auto const& item: data) {
-        cout << "[" << item.first << ", " << item.second << "]" << " ";
-    }
-    cout << "]" << endl;
-}
+// void print(vector<pair<int, int>>& data) {
+//     cout << "[";
+//     for(auto const& item: data) {
+//         cout << "[" << item.first << ", " << item.second << "]" << " ";
+//     }
+//     cout << "]" << endl;
+// }

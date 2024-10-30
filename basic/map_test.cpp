@@ -2,14 +2,14 @@
 // Created by Younghusband on 2024/8/6.
 //
 
-#include <iostream>
-#include <unordered_map>
+// #include <iostream>
+// #include <unordered_map>
 
 
-using namespace std;
+// using namespace std;
 
 // int main() {
-//     std::unordered_map<int, std::string> map = {
+//     unordered_map<int, string> map = {
 //         {1, "one"},
 //         {2, "two"},
 //         {3, "three"}

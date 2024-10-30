@@ -82,6 +82,10 @@
 //     readyToInsert.insert(4, 1, 'A');
 //     cout << readyToInsert << endl;
 //
+//     string testsub = "xxx ssdf";
+//     cout << testsub.substr(4, 4) << endl;
+//
+//
 // }
 //
 //

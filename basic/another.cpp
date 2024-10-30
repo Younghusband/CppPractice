@@ -1,23 +1,23 @@
+// //
+// // Created by Younghusband on 2024/8/13.
+// //
 //
-// Created by Younghusband on 2024/8/13.
 //
-
-
-#include <algorithm>
-#include <iostream>
-#include <utility>
-#include <vector>
-#include <bitset>
-
-using namespace std;
-
-
-template <typename T1, typename T2>
-auto add(T1 a, T2 b) -> decltype(a + b) {
-    return a + b;
-}
-
-
+// #include <algorithm>
+// #include <iostream>
+// #include <utility>
+// #include <vector>
+// #include <bitset>
+//
+// using namespace std;
+//
+//
+// template <typename T1, typename T2>
+// auto add(T1 a, T2 b) -> decltype(a + b) {
+//     return a + b;
+// }
+//
+//
 // int main() {
 //
 //     cout << to_string(add(3 , 0.5)) << endl;
@@ -65,5 +65,15 @@ auto add(T1 a, T2 b) -> decltype(a + b) {
 //
 //     cout << has << endl;
 //
+//     isalpha('x');
+//     isdigit('3');
+//     isalnum('s'); // alpha | digit
+//     islower('a');
+//     isupper('A');
+//
+//     search("");
+//
+//
+//
 // }
-
+//
