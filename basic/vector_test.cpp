@@ -143,6 +143,12 @@
 //     cout << strv.back() << endl;
 //     strv.back()+="yf";
 //     cout << strv.back() << endl;
+//
+//
+//     vector<string> newStrV = {"xxx", "6666"};
+//     strv.insert(strv.end(), newStrV.begin(), newStrV.end());
+//     print(strv);
+//
 // }
 //
 //

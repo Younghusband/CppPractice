@@ -1,10 +1,31 @@
-// #include <cmath>
-// #include <iostream>
-// #include <queue>
-//
-//
-// using namespace std;
-//
+/**
+ * Tips:
+ * 1. operator() 的使用
+ * 2. 遍历的时候一定切记要避免死循环
+ */
+
+
+#include <cmath>
+#include <iostream>
+#include <queue>
+
+
+using namespace std;
+
+struct Task {
+    int priority;
+    string name;
+    Task(int p, string n) : priority(p), name(n) {}
+};
+
+struct Compare {
+    bool operator()(const Task& a, const Task& b) {
+        if(a.priority == b.priority)
+            return a.name < b.name;
+        return a.priority < b.priority;
+    }
+};
+
 // int main() {
 //
 //     auto comparator = [](const int& p1, const int& p2) {
@@ -19,15 +40,37 @@
 //     singleQ.push(6);
 //     singleQ.push(5);
 //
-//     // while(!singleQ.empty()) {
-//     //     cout << singleQ.top() << ", ";
-//     //     singleQ.pop();
-//     // }
-//     // cout << endl;
+//     while(!singleQ.empty()) {
+//         cout << singleQ.top() << ", ";
+//         singleQ.pop();
+//     }
+//     cout << endl;
+//
+//     // cQ.push(7);
+//     // cQ.push(6);
+//     // cQ.push(5);
 //
 //
-//     cQ.push(7);
-//     cQ.push(6);
-//     cQ.push(5);
+//     auto cmp = [](const Task& a, const Task& b) {
+//         if(a.priority == b.priority) {
+//             return a.name > b.name;
+//         }
+//         return a.priority < b.priority;
+//     };
+//     // priority_queue<Task, vector<Task>, Compare> compareTaskPQ;
+//     priority_queue<Task, vector<Task>, decltype(cmp)> compareTaskPQ(cmp);
+//
+//     compareTaskPQ.emplace(6, "an");
+//     compareTaskPQ.push(Task(6, "fan"));
+//     compareTaskPQ.emplace(1, "xi");
+//     compareTaskPQ.emplace(3, "duan");
+//     compareTaskPQ.emplace(4, "liu");
+//
+//     while(!compareTaskPQ.empty()) {
+//         cout << compareTaskPQ.top().name << ": " << compareTaskPQ.top().priority;
+//         compareTaskPQ.pop();
+//         cout << ", ";
+//     }
+//     cout << endl;
 //
 // }

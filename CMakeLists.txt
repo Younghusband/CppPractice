@@ -26,7 +26,6 @@ add_executable(CppPractice main.cpp
         huawei/done/TimerSystem.cpp
         huawei/done/backspace.cpp
         huawei/stack_calculator.cpp
-        huawei/done/filename_gen.cpp
         huawei/three_points.cpp
         basic/another.cpp
         basic/list_test.cpp
@@ -61,8 +60,7 @@ add_executable(CppPractice main.cpp
         basic/deque_test.cpp
         leetcode/subsets.cpp
         basic/queue_test.cpp
-        basic/main1.cpp
-        basic/main2.cpp
+        huawei/done/programing_lan_sys.cpp
         basic/hex_binary_test.cpp
         basic/main3.cpp
         huawei/done/baowen.cpp
@@ -72,4 +70,5 @@ add_executable(CppPractice main.cpp
         huawei/done/filename_generator.cpp
         huawei/done/max_mask_output.cpp
         huawei/three_p.cpp
+        huawei/mem_leak_check.cpp
 )

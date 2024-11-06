@@ -95,8 +95,8 @@ public:
 };
 
 
-int main() {
-    Solution slo;
-    pair<int, int> res = slo.GetPoint({18,1}, {17, 0});
-    cout << res.first << ", " << res.second << endl;
-}
+// int main() {
+//     Solution slo;
+//     pair<int, int> res = slo.GetPoint({18,1}, {17, 0});
+//     cout << res.first << ", " << res.second << endl;
+// }
