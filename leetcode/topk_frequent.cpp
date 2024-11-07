@@ -7,6 +7,7 @@
 #include <unordered_map>
 #include <vector>
 #include <iostream>
+#include <queue>
 using namespace std;
 class Solution {
 
@@ -20,14 +21,29 @@ public:
         for(int num: nums) {
             freqMap[num] += 1;
         }
-
-        // map 2 vec
-        vector<pair<int, int>> vec(freqMap.begin(), freqMap.end());
-        sort(vec.begin(), vec.end(), compare);
-        int n = vec.size();
-        for(int i = n - 1; i >= n - k; i--) {
-            res.push_back(vec[i].first);
+        // vector<pair<int, int>> vec(freqMap.begin(), freqMap.end()); // map 2 vec
+        auto cmp = [&] (const pair<int, int> p1, const pair<int, int> p2) {
+            return p1.second > p2.second;
+        };
+        priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> pq(cmp);
+        for(auto const& pair : freqMap) {
+            if(pq.size() < k) {
+                pq.push(pair);
+            }
+            // 满了
+            else {
+                if(pair.second > pq.top().second) {
+                    pq.push(pair);
+                    pq.pop();
+                }
+            }
         }
+
+        while(!pq.empty()) {
+            res.push_back(pq.top().first);
+            pq.pop();
+        }
+
         return res;
     }
 

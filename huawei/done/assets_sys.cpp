@@ -87,18 +87,17 @@ public:
     }
 };
 
-int main() {
-    // AssetsSystem()
-    // addAssets(1812)
-    // borrowAssets(99527, 1812)
-    // addAssets(1812)
-    // statAssets(2)
-    // returnAssets(1812)
-
-    AssetsSystem s;
-    s.AddAssets(1234);
-    s.BorrowAssets(99527, 1234);
-    s.ReturnAssets(1234);
-    s.StatAssets(1);
-
-}
+// int main() {
+//     // AssetsSystem()
+//     // addAssets(1812)
+//     // borrowAssets(99527, 1812)
+//     // addAssets(1812)
+//     // statAssets(2)
+//     // returnAssets(1812)
+//
+//     AssetsSystem s;
+//     s.AddAssets(1234);
+//     s.BorrowAssets(99527, 1234);
+//     s.ReturnAssets(1234);
+//     s.StatAssets(1);
+// }

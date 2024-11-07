@@ -64,11 +64,13 @@ add_executable(CppPractice main.cpp
         basic/hex_binary_test.cpp
         basic/main3.cpp
         huawei/done/baowen.cpp
-        huawei/Assets_sys.cpp
+        huawei/done/assets_sys.cpp
         basic/coro_test.cpp
         huawei/done/min_price.cpp
         huawei/done/filename_generator.cpp
         huawei/done/max_mask_output.cpp
         huawei/three_p.cpp
         huawei/mem_leak_check.cpp
+        capnp/test_capn.cpp
+        basic/lambda_test.cpp
 )

@@ -20,7 +20,6 @@ public:
     //     return nums[k - 1];
     // }
 
-
     void heapify(vector<int>& data, int i, int heapSize) {
         int largest = i;
         int left = i * 2 + 1;
