@@ -1,51 +1,53 @@
-// //
-// // Created by Younghusband on 2024/8/6.
-// //
-// #include <iostream>
-// #include <vector>
-// #include <string>
-// #include <algorithm>
 //
-// using namespace std;
+// Created by Younghusband on 2024/8/6.
 //
-// template <typename T>
-// void print(vector<T>& arr) {
-//     string res = "[";
-//     for(int i = 0; i < arr.size(); i++) {
-//         res += to_string(arr.at(i));
-//         if(i != arr.size() - 1) {
-//             res += ", ";
-//         }
-//     }
-//     res += "]";
-//     cout << res << endl;
-// }
-//
-// template <>
-// void print<string>(vector<string>& arr) {
-//     string res = "[";
-//     for (int i = 0; i < arr.size(); i++) {
-//         res += arr.at(i);  // 直接使用 string 类型
-//         if (i != arr.size() - 1) {
-//             res += ", ";
-//         }
-//     }
-//     res += "]";
-//     cout << res << endl;
-// }
-//
-//
-// bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
-//     // 按照第一个值排序，第一个值相同则按照第二个值排序
-//     if (a.first != b.first) {
-//         return a.first < b.first;
-//     }
-//     return a.second < b.second;
-// }
-//
-//
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+template <typename T>
+void print(vector<T>& arr) {
+    string res = "[";
+    for(int i = 0; i < arr.size(); i++) {
+        res += to_string(arr.at(i));
+        if(i != arr.size() - 1) {
+            res += ", ";
+        }
+    }
+    res += "]";
+    cout << res << endl;
+}
+
+template <>
+void print<string>(vector<string>& arr) {
+    string res = "[";
+    for (int i = 0; i < arr.size(); i++) {
+        res += arr.at(i);  // 直接使用 string 类型
+        if (i != arr.size() - 1) {
+            res += ", ";
+        }
+    }
+    res += "]";
+    cout << res << endl;
+}
+
+
+bool comparePairs(const pair<int, int>& a, const pair<int, int>& b) {
+    // 按照第一个值排序，第一个值相同则按照第二个值排序
+    if (a.first != b.first) {
+        return a.first < b.first;
+    }
+    return a.second < b.second;
+}
+
+
 // int main() {
 //     vector<int> vec = {1,2,3,4,5};
+//     vec.erase(vec.begin());
+//
 //     vec.push_back(6);
 //     print(vec);
 //
@@ -87,7 +89,6 @@
 //     rVec.emplace(rVec.begin(), -1);
 //     print(rVec);
 //
-//
 //     vector<pair<int, int>> needCompareVec = {
 //         {3, 2},
 //         {1, 4},
@@ -123,32 +124,26 @@
 //     print(vec1);
 //     auto newEnd = remove(vec1.begin(), vec1.end(), 1);
 //     cout << "after execute \"remove\"" << endl;
-//     print(vec1);  // 会发现只是把元素全部移动到末尾。。。 这里的打印有点问题 TODO
+//     print(vec1);  // 会发现只是把元素全部移动到末尾
+//     vec1.erase(newEnd, vec1.end());   // remove 需要搭配erase使用。不建议
 //
-//     vec1.erase(newEnd, vec1.end());
 //     cout << "after execute \"erase\"" << endl;
 //     print(vec1);
 //
 //     vector<string> vec2 = {"a", "b", "abc"};
-//     auto findIt = find(vec2.begin(), vec2.end(), "a");
-//
-//     cout << *findIt << endl;
-//
+//     auto findIt = find(vec2.begin(), vec2.end(), "b");
+//     cout << distance(vec2.begin(), findIt) << endl;
 //
 //     vector<string> strv = {"yyyy", "ffffffffff", "mmm"};
 //     strv[0] += strv[1];
 //     strv.erase(strv.begin() + 1);
 //     print(strv);
-//
 //     cout << strv.back() << endl;
-//     strv.back()+="yf";
-//     cout << strv.back() << endl;
-//
 //
 //     vector<string> newStrV = {"xxx", "6666"};
 //     strv.insert(strv.end(), newStrV.begin(), newStrV.end());
 //     print(strv);
 //
 // }
-//
-//
+
+

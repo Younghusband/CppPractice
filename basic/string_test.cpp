@@ -1,23 +1,66 @@
-// //
-// // Created by Younghusband on 2024/8/4.
-// //
 //
-// #include <iostream>
-// #include <string>
-// #include <vector>
-// #include <algorithm>
-// #include <cstring>
+// Created by Younghusband on 2024/8/4.
 //
-// using namespace std;
-//
-// void print(char str, char split);
-//
-// void print(char str, char split) {
-//     cout << str << split;
-// }
-//
-// #define XXX = "caonima";
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cstring>
+#include <sstream>
+
+using namespace std;
+
+void print(char str, char split);
+
+void print(char str, char split) {
+    cout << str << split;
+}
+
+#define XXX = "caonima";
+
+vector<string> splitBySpace(const string& source) {
+    stringstream ss(source);
+    vector<string> res;
+    string tmpword;
+    while(ss >> tmpword) {
+        res.push_back(tmpword);
+    }
+    return res;
+}
+
+template <typename T>
+string vector2String(const vector<T>& vec) {
+    ostringstream oss;
+    oss << "[";
+    for(size_t i = 0; i < vec.size(); ++i) {
+        oss << vec[i];
+        if(i != vec.size() - 1) {
+            oss << ", ";
+        }
+    }
+    oss << "]";
+    return oss.str();
+} // oss更适合只读，也更快
+
+template <typename T>
+string vector2String1(const vector<T>& vec) {
+    stringstream ss;
+    ss << "[";
+    for(size_t i = 0; i < vec.size(); ++i) {
+        ss << vec[i];
+        if(i != vec.size() - 1) {
+            ss << ", ";
+        }
+    }
+    ss << "]";
+    return ss.str();
+} // ss可读可输出
+
 // int main() {
+//     string spaceStr = "00 c1 0a 11 c9 45 77";
+//     vector<string> ss = splitBySpace(spaceStr);
+//     cout << vector2String1(ss) << endl;
 //
 //     string str = "Hello World!";
 //     for(string::iterator it = str.begin(); it != str.end(); it++) {
@@ -28,9 +71,8 @@
 //         print(*it, ' ');
 //     }
 //     cout << endl;
-//
 //     string yf = "yang fan 110";
-//     cout << yf.substr(1, 999) << endl;
+//     cout << yf.substr(1, 2) << endl;
 //     cout << stoi(yf.substr(9)) << endl;
 //
 //     string str11("HelloWorld");
@@ -85,10 +127,10 @@
 //     string testsub = "xxx ssdf";
 //     cout << testsub.substr(4, 4) << endl;
 //
-//
-//
+//     testsub.insert(testsub.begin(), 1, '0');
+//     cout << testsub << endl;
 // }
-//
-//
-//
-//
+
+
+
+

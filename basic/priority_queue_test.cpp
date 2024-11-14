@@ -28,13 +28,13 @@ struct Compare {
 
 // int main() {
 //
-//     auto comparator = [](const int& p1, const int& p2) {
+//     auto cmp = [](const int& p1, const int& p2) {
 //         return p1 < p2;
 //     };  // 这样是构造大根堆
 //
 //     // priority_queue<int> singleQ; // 默认大根
 //     priority_queue<int, vector<int>, greater<int>> singleQ;  // 小根堆
-//     priority_queue<int, vector<int>, decltype(comparator)> cQ(comparator);  // 也可以写个函数直接传函数名进来
+//     priority_queue<int, vector<int>, decltype(cmp)> cQ(cmp);  // 也可以写个函数直接传函数名进来
 //
 //     singleQ.push(7);
 //     singleQ.push(6);
@@ -50,15 +50,14 @@ struct Compare {
 //     // cQ.push(6);
 //     // cQ.push(5);
 //
-//
-//     auto cmp = [](const Task& a, const Task& b) {
+//     auto cmp1 = [](const Task& a, const Task& b) {
 //         if(a.priority == b.priority) {
 //             return a.name > b.name;
 //         }
 //         return a.priority < b.priority;
 //     };
 //     // priority_queue<Task, vector<Task>, Compare> compareTaskPQ;
-//     priority_queue<Task, vector<Task>, decltype(cmp)> compareTaskPQ(cmp);
+//     priority_queue<Task, vector<Task>, decltype(cmp1)> compareTaskPQ(cmp1);
 //
 //     compareTaskPQ.emplace(6, "an");
 //     compareTaskPQ.push(Task(6, "fan"));

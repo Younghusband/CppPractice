@@ -34,7 +34,7 @@ public:
         return false;
     }
 
-    // 可以使用std::get访问tuple中的成员，比如std::get<0>(obj)可访问obj中第一个成员
+    // std::get<0>(obj)可访问obj中第一个成员
     vector<tuple<string, int, int>> GetPhoneRecords(const vector<pair<char, string>>& operations)
     {
         for(const auto& cmd: operations) {

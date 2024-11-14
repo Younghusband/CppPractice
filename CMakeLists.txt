@@ -57,15 +57,13 @@ add_executable(CppPractice main.cpp
         basic/number_test.cpp
         huawei/dianliu_sample.cpp
         huawei/words_matchII.cpp
-        basic/deque_test.cpp
         leetcode/subsets.cpp
         basic/queue_test.cpp
         huawei/done/programing_lan_sys.cpp
-        basic/hex_binary_test.cpp
-        basic/main3.cpp
+        basic/jinzhi_test.cpp
+        huawei/main3.cpp
         huawei/done/baowen.cpp
         huawei/done/assets_sys.cpp
-        basic/coro_test.cpp
         huawei/done/min_price.cpp
         huawei/done/filename_generator.cpp
         huawei/done/max_mask_output.cpp
@@ -73,4 +71,12 @@ add_executable(CppPractice main.cpp
         huawei/mem_leak_check.cpp
         capnp/test_capn.cpp
         basic/lambda_test.cpp
+        basic/stoi_test.cpp
+        basic/print_test.cpp
+        basic/itoa_test.cpp
+        basic/sprintf_test.cpp
+        basic/find_test.cpp
+        huawei/work/code3.cpp
+        huawei/work/code1.cpp
+        huawei/work/code2.cpp
 )

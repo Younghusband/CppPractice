@@ -19,10 +19,21 @@ public:
         return res;
     }
 
+    bool checkValidXie(const pair<int, int>& p1, const pair<int, int>& p2) {
+        int distanceX = abs(p1.first - p2.first);
+        int distanceY = abs(p1.second - p2.second);
+
+        return distanceX == distanceY;
+    }
+
+
+
     pair<int, int> GetPoint(const pair<int, int>& p1, const pair<int, int>& p2)
     {
-        if(p1.first < 0 || p1.first > 18 || p2.first < 0 || p2.first > 18 || p1.second < 0 || p1.second > 18
-            || p2.second < 0 || p2.first > 18) {
+        if(p1.first < 0 || p1.first > 18 ||
+            p2.first < 0 || p2.first > 18 ||
+            p1.second < 0 || p1.second > 18 ||
+            p2.second < 0 || p2.second > 18) {
             return {-1, -1};
         }
         if(abs(p1.first - p2.first) > 2 || abs(p1.second - p2.second) > 2) {
@@ -67,6 +78,11 @@ public:
         }
         // 斜  这里有误，默认45度了。。
         else {
+            // 判断是否合法
+            if(!checkValidXie(p1, p2)) {
+                return {-1, -1};
+            }
+
             bool adj = (abs(p1.first - p2.first) == 1);
             // 不相邻不需要判断左右边界
             if(!adj) {
@@ -97,6 +113,6 @@ public:
 
 // int main() {
 //     Solution slo;
-//     pair<int, int> res = slo.GetPoint({18,1}, {17, 0});
+//     pair<int, int> res = slo.GetPoint({1,1}, {3, 2});
 //     cout << res.first << ", " << res.second << endl;
 // }

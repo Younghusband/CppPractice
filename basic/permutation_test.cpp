@@ -1,20 +1,16 @@
+// //
+// // Created by Younghusband on 2024/10/18.
+// //
 //
-// Created by Younghusband on 2024/10/18.
+// #include <algorithm>
+// #include <iostream>
+// #include <string>
 //
-
-#include <algorithm>
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-
+// using namespace std;
+//
+//
 // int main() {
-//     std::string str("HelloWorld");
-//     auto itr = find(str.begin(), str.end(), 'o');
-//     if (itr != str.end()) {
-//         cout << itr - str.begin() << endl; // 输出4
-//     }
+//     string str("HelloWorld");
 //     sort(str.begin(), str.end());
 //     cout << str << endl; // 输出排序结果HWdellloor
 //     str.assign("HelloWorld");
@@ -26,6 +22,17 @@ using namespace std;
 //     next_permutation(str.begin(), str.end()); // 输出字典序全排列的下一个排列acb
 //     cout << str << endl;
 //     str.assign("cba");
+//
+//     if(!next_permutation(str.begin(), str.end())) {  // 虽然判断到末尾了，但依旧会执行到下一个排列
+//         cout << "last permutation.." << endl;
+//     }
+//
+//     if(!next_permutation(str.begin(), str.end())) {
+//         cout << "last permutation.." << endl;
+//     } else {
+//         cout << "---------------" << endl;
+//     }
+//
 //     prev_permutation(str.begin(), str.end()); // 输出字典序全排列的上一个排列cab
 //     cout << str << endl;
 //

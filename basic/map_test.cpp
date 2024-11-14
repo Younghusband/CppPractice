@@ -1,19 +1,21 @@
-//
-// Created by Younghusband on 2024/8/6.
-//
-
 // #include <iostream>
 // #include <unordered_map>
-
-
+//
+//
 // using namespace std;
-
+//
 // int main() {
-//     unordered_map<int, string> map = {
+//
+//     // unordered_map<int, string> map = {
+//     //     {1, "one"},
+//     //     {2, "two"},
+//     //     {3, "three"}
+//     // };
+//     unordered_map<int, string> map {
 //         {1, "one"},
 //         {2, "two"},
 //         {3, "three"}
-//     };
+//     }; // both right
 //
 //     int cantFind = 4;
 //     if(map.count(cantFind) == 0) {
@@ -37,12 +39,12 @@
 //     }
 //
 //     int key = 1;
-//     auto it = map.find(key);
-//     if(it != map.end()) {
-//         cout << "key [" << key << "] exists with value: " << it->second << std::endl;
+//     if(map.find(key) != map.end()) {
+//         cout << "key [" << key << "] exists with value: " << map.find(key)->second << std::endl;
 //     } else {
 //         cout << "key [" << key << "] does done exist." << std::endl;
 //     }
 //
 //     cout << map.contains(99); // after 20
+//
 // }

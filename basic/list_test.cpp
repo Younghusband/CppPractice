@@ -24,6 +24,10 @@ void print(const list<pair<int, string>>& data) {
 
 // int main() {
 //
+//     list<pair<int, string>> data = {{1, "yangfan"}, {2, "xuxiaorong"}, {3, "heyu"}};
+//     data.splice(data.begin(), data, next(next(data.begin())));  // 适用于已有数据的腾挪
+//     print(data);
+//
 //     list<int> singleList;
 //
 //     singleList.push_front(1);
@@ -51,10 +55,6 @@ void print(const list<pair<int, string>>& data) {
 //
 //     singleList.pop_back();
 //     singleList.pop_front();
-//     cout << singleList.back() << endl; // 注意 begin end是iterator  front back是实际引用
-//
-//     list<pair<int, string>> data = {{1, "yangfan"}, {2, "xuxiaorong"}, {3, "heyu"}};
-//     data.splice(data.begin(), data, next(next(data.begin())));  // 适用于已有数据的腾挪
-//     print(data);
+//     cout << singleList.back() << endl << "----------------------" << endl; // 注意 begin end是iterator  front back是实际引用
 //
 // }

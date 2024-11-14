@@ -23,7 +23,6 @@ using namespace std;
  */
 class OrderSystem {
 public:
-
     unordered_map<int, vector<string>> CMap;
     unordered_map<string, vector<int>> GMap;
 
