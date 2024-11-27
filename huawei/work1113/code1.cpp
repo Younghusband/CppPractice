@@ -20,7 +20,6 @@ public:
             int v = toascii(c) - 64;
             dic[c] = v;
             redic[v] = c;
-
         }
         for(char c = 'a'; c <= 'z'; c++) {
             int v = toascii(c) - 96;
@@ -44,19 +43,19 @@ public:
     }
 };
 
-int main () {
-
-    // char c = 'A';
-    //
-    // cout << toascii('A') << endl;
-    // cout << toascii('B') << endl;
-    // cout << toascii('a') << endl;
-    // cout << toascii('b') << endl;
-    //
-    // cout << pow(3, 2) << endl;
-    Solution slo;
-    string s = "abB";
-    string res = slo.SortLetterStr(s);
-    cout << res << endl;
-
-}
+// int main () {
+//
+//     // char c = 'A';
+//     //
+//     cout << toascii('A') << endl;
+//     cout << toascii('B') << endl;
+//     cout << toascii('a') << endl;
+//     cout << toascii('b') << endl;
+//     //
+//     // cout << pow(3, 2) << endl;
+//     // Solution slo;
+//     // string s = "abB";
+//     // string res = slo.SortLetterStr(s);
+//     // cout << res << endl;
+//
+// }

@@ -76,7 +76,8 @@ add_executable(CppPractice main.cpp
         basic/itoa_test.cpp
         basic/sprintf_test.cpp
         basic/find_test.cpp
-        huawei/work/code3.cpp
-        huawei/work/code1.cpp
-        huawei/work/code2.cpp
+        huawei/work1113/code3_with_struct.cpp
+        huawei/work1113/code1.cpp
+        huawei/work1113/code2.cpp
+        huawei/work1113/code3_use_tuples.cpp
 )

@@ -14,15 +14,15 @@
 
 using namespace std;
 
-// struct Proc {
-//     int procId;
-//     int leftMem;
-//     vector<pair<int, int>> data; // device -> mem
-// };
-//
-// struct Group {
-//     vector<Proc> data;
-// };
+struct Proc {
+    int procId;
+    int leftMem;
+    vector<pair<int, int>> data; // device -> mem
+};
+
+struct Group {
+    vector<Proc> data;
+};
 
 class DeviceMgtSystem {
 
@@ -30,15 +30,13 @@ public:
     const int TYPE_NUM = 3;
     // pid, leftmem, data: device /mem
     using Proc = tuple<int, int, vector<pair<int, int>>>;
-    unordered_map<int, Proc> totalData;
-
-    unordered_map<int, vector< tuple<int, int, vector<pair<int, int>>> > > totalData;
+    unordered_map<int, vector<Proc>> totalData;
     int maxmem;
 
     unordered_map<int, string> deviceAddr;
 
-    vector<tuple<int, int, vector<pair<int, int>>>> createProcs(int procNum, int maxMem) {
-        vector<tuple<int, int, vector<pair<int, int>>>> res;
+    vector<Proc> createProcs(int procNum, int maxMem) {
+        vector<Proc> res;
         vector<pair<int, int>> v;
         for(int i = 0; i < procNum; i++) {
             res.push_back(make_tuple(i, maxMem, v));
@@ -46,8 +44,8 @@ public:
         return res;
     }
 
-    int loadBalance(vector<tuple<int, int, vector<pair<int, int>>>> data) {
-        auto cmp = [](const tuple<int, int, vector<pair<int, int>>>& p1, const tuple<int, int, vector<pair<int, int>>>& p2) {
+    int loadBalance(vector<Proc> data) {
+        auto cmp = [](const Proc& p1, const Proc& p2) {
             int p1m = get<1>(p1);
             int p2m = get<1>(p2);
             int p1d = get<0>(p1);
@@ -57,7 +55,6 @@ public:
             }
             return p1m > p2m;
         };
-
         sort(data.begin(), data.end(), cmp);
         return get<0>(data[0]);
     }
@@ -71,7 +68,6 @@ public:
 
         ss >> tmpw;
         res.second = tmpw;
-
         return res;
     }
 
@@ -87,16 +83,15 @@ public:
         // by type find group
         // get procId
         int pId = loadBalance(totalData[deviceType]);
-        tuple<int, int, vector<pair<int, int>>>& p = totalData[deviceType].at(pId);
+        Proc& p = totalData[deviceType].at(pId);
         int & mem = get<1>(p);
         if(mem < memSize) {
             return -1;
         }
         mem -= memSize;
 
-        tuple<int, int, vector<pair<int, int>>>& proc = totalData[deviceType][pId];
+        Proc& proc = totalData[deviceType][pId];
         get<2>(proc).push_back(make_pair(deviceId, memSize));
-
         string addr = "";
         addr += to_string(deviceType);
         addr += " ";
@@ -106,7 +101,7 @@ public:
     }
 
     void releaseDeviceMem(int gId, int pId, int dId) {
-        tuple<int, int, vector<pair<int, int>>>& p = totalData[gId][pId];
+        Proc& p = totalData[gId][pId];
         int removeIdx = -1;
         vector<pair<int, int>>& pData = get<2>(p);
         for(int i = 0; i < pData.size(); i++) {
@@ -184,28 +179,5 @@ public:
 //
 //
 //
-//     // deleteDevice(18)
-//     // createDevice(26, 2, 70)
-//     // queryDevice(1)
-//     // queryDevice(2)
 //
-//
-//
-// }
-
-// bool compareProc(const Proc p1, const Proc p2) {
-//     if(p1.leftMem == p2.leftMem) {
-//         return p1.procId < p2.procId;
-//     }
-//     return p1.leftMem > p2.leftMem;
-// }
-
-// bool deviceCmp(const tuple<int, int, int>& t1, const tuple<int, int, int>& t2) {
-//     if(get<1>(t1) == get<1>(t2)) {
-//         if(get<2>(t1) == get<2>(t2)) {
-//             return get<0>(t1) < get<0>(t2);
-//         }
-//         return get<2>(t1) < get<2>(t2);
-//     }
-//     return get<1>(t1) > get<1>(t2);
 // }
