@@ -100,7 +100,7 @@ public:
         }
         mem -= memSize;
         p.data.push_back(make_pair(deviceId, memSize));
-        string addr = "";
+        string addr;
         addr += to_string(deviceType);
         addr += " ";
         addr += to_string(pId);

@@ -80,4 +80,7 @@ add_executable(CppPractice main.cpp
         huawei/work1113/code1.cpp
         huawei/work1113/code2.cpp
         huawei/work1113/code3_use_tuples.cpp
+        huawei/ha_online_video.cpp
+        basic/patterns/strategy_1.cpp
+        basic/pointer_test.cpp
 )

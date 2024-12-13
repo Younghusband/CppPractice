@@ -99,12 +99,10 @@ string int_2_binary(const string& istr) {
 //         cout << "ssb Conversion failed..." << endl;
 //     } else {
 //         cout << "b1: " << b1.to_string() << endl;
+//         cout << "b2: " << b2.to_string() << endl;
+//         cout << "b3: " << b3.to_string() << endl;
+//         cout << "===========================" << endl;
 //     }
-//
-//
-//     int xx = 9;
-//     bitset<8> bixx(xx);
-//     cout << bixx.to_string() << endl;
 //
 //     return 0;
 // }

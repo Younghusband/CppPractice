@@ -4,7 +4,6 @@
 
 
 #include <algorithm>
-#include <iostream>
 #include <list>
 #include <string>
 #include <unordered_map>
@@ -19,7 +18,6 @@ public:
     int deviceMaxMsgSize;
     int ipMaxMsgSize;  // <= deviceMaxMsgSize
 
-    // unordered_map<int, string> ipMacMap;
     // 用于淘汰表项
     list<pair<int, string>> ipMacData;  // ip : mac
     unordered_map<int, list<pair<int, string>>::iterator> ipMacCache;
